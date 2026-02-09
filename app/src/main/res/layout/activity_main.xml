@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -35,33 +35,33 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="25dp">
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginTop="25dp">-->
 
-        <ImageButton
-            android:id="@+id/clockwise_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@drawable/round_background"
-            app:srcCompat="@drawable/rot_clockwise"
-            android:layout_marginEnd="30dp"/>
+<!--        <ImageButton-->
+<!--            android:id="@+id/clockwise_button"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:background="@drawable/round_background"-->
+<!--            app:srcCompat="@drawable/rot_clockwise"-->
+<!--            android:layout_marginEnd="30dp"/>-->
 
-        <ImageButton
-            android:id="@+id/counter_clockwise_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="@drawable/round_background"
-            app:srcCompat="@drawable/rot_counter"
-            android:layout_marginStart="30dp"/>
+<!--        <ImageButton-->
+<!--            android:id="@+id/counter_clockwise_button"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:background="@drawable/round_background"-->
+<!--            app:srcCompat="@drawable/rot_counter"-->
+<!--            android:layout_marginStart="30dp"/>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
 
 
-<!--    <TextView
+    <TextView
         android:id = "@+id/message_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,6 +69,6 @@
         android:text = "@string/begin_game_text">
 
     </TextView>
-    -->
+
 
 </LinearLayout>
