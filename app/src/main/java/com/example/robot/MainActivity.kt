@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var messageBox: TextView
     private lateinit var clockwiseButton: ImageView
     private lateinit var counterClockwiseButton: ImageView
-    private var turnCount /*: Int*/ = 0
+//    turnCount is now in RobotViewModel, so that we can retain memory after device rotation
+    //    private var turnCount /*: Int*/ = 0
     private lateinit var robotImages: MutableList<ImageView>
 
 //    private val robotViewModel = RobotViewModel() // This runs but is bad, returns new viewModel
@@ -86,6 +87,13 @@ class MainActivity : AppCompatActivity() {
 //        counterClockwiseButton.setOnClickListener {
 //            toggleImageButtonCounterClockwise()
 //        }
+
+        if (robotViewModel.currentTurn > 0) {
+            setRobotTurn()
+            setRobotImages()
+            updateMessageBox()
+        }
+
     } // End of onCreate
 
     override fun onStart() {
@@ -114,15 +122,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun toggleImage(){
-        turnCount++
-        if (turnCount > 3) {
-            turnCount = 1
-        }
-        if (turnCount == 1) {
+        robotViewModel.advanceTurn()
+
+        if (robotViewModel.currentTurn == 1) {
             redRobotImg.setImageResource(R.drawable.robot_red_large)
             whiteRobotImg.setImageResource(R.drawable.robot_white_small)
             yellowRobotImg.setImageResource(R.drawable.robot_yellow_small)
-        }else if (turnCount == 2) {
+        }else if (robotViewModel.currentTurn == 2) {
             whiteRobotImg.setImageResource(R.drawable.robot_white_large)
             redRobotImg.setImageResource(R.drawable.robot_red_small)
             yellowRobotImg.setImageResource(R.drawable.robot_yellow_small)
@@ -189,19 +195,19 @@ class MainActivity : AppCompatActivity() {
 
     // Pick it up here
     private fun updateMessageBox() {
-        when(turnCount) {
+        when(robotViewModel.currentTurn) {
             1 -> messageBox.setText(R.string.red_message_text)
             2 -> messageBox.setText(R.string.white_message_text)
             else -> messageBox.setText(R.string.yellow_message_text)
         }
-        messageBox.setText(robots[turnCount - 1].robotMessageResource)
+        messageBox.setText(robots[robotViewModel.currentTurn - 1].robotMessageResource)
     }
 
     private fun setRobotTurn() {
         for (robot in robots) {
             robot.myTurn = false
         }
-        robots[turnCount - 1].myTurn = true
+        robots[robotViewModel.currentTurn - 1].myTurn = true
     }
 
     private fun setRobotImages() {
