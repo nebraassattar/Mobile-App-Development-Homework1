@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/white_robot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/robot_white_large" />
+
+        <TextView
+            android:id="@+id/balanceTotal"
+            android:layout_width="30dp"
+            android:layout_height="120dp"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:text = "@string/robot_energy"/>
+
+        <ImageView
+            android:id="@+id/energyCounter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/energy_counter" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp">
+
+        <Button
+            android:id="@+id/rewardA"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:text = "@string/reward_a_text"/>
+
+
+        <Button
+            android:id="@+id/rewardB"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:text = "@string/reward_b_text"/>
+
+
+        <Button
+            android:id="@+id/rewardC"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="10dp"
+            android:text = "@string/reward_c_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/rewardATotal"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:text="1" />
+
+        <ImageView
+            android:id="@+id/rewardAPicture"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/energy_counter"
+            android:layout_marginEnd="30dp"/>
+
+        <TextView
+            android:id="@+id/rewardBTotal"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:layout_marginStart="35dp"
+            android:text="2" />
+
+        <ImageView
+            android:id="@+id/rewardBPicture"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="35dp"
+            app:srcCompat="@drawable/energy_counter" />
+
+        <TextView
+            android:id="@+id/rewardCTotal"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:textSize="20dp"
+            android:layout_marginStart="30dp"
+            android:text="3" />
+
+        <ImageView
+            android:id="@+id/rewardCPicture"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/energy_counter" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
