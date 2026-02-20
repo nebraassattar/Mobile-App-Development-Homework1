@@ -70,5 +70,14 @@
 
     </TextView>
 
+    <Button
+        android:id="@+id/purchase_button"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="Purchase Rewards"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp">
+    </Button>
+
 
 </LinearLayout>

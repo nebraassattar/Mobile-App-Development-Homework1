@@ -8,4 +8,5 @@
     <string name="reward_b_text">Reward B</string>
     <string name="reward_c_text">Reward C</string>
     <string name="robot_energy">0</string>
+    <string name="purchased">Purchased</string>
 </resources>

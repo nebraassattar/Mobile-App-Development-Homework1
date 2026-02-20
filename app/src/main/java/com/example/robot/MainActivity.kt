@@ -3,6 +3,7 @@ package com.example.robot
 import android.media.Image
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var whiteRobotImg: ImageView
     private lateinit var yellowRobotImg: ImageView
     private lateinit var messageBox: TextView
+    private lateinit var rewardPurchase : Button
     private lateinit var clockwiseButton: ImageView
     private lateinit var counterClockwiseButton: ImageView
 //    turnCount is now in RobotViewModel, so that we can retain memory after device rotation
@@ -60,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         whiteRobotImg = findViewById(R.id.white_robot)
         yellowRobotImg = findViewById(R.id.yellow_robot)
         messageBox = findViewById(R.id.message_box)
+        rewardPurchase = findViewById(R.id.purchase_button)
 //      clockwiseButton = findViewById(R.id.clockwise_button)
 //      counterClockwiseButton = findViewById(R.id.counter_clockwise_button)
         robotImages = mutableListOf(redRobotImg, whiteRobotImg, yellowRobotImg)
@@ -68,6 +71,11 @@ class MainActivity : AppCompatActivity() {
         redRobotImg.setOnClickListener {
             // Toast.makeText(this, "Red Robot Clicked", Toast.LENGTH_SHORT).show()
             toggleImage()
+        }
+
+        rewardPurchase.setOnClickListener {
+            val intent = Intent(this, RobotPurchase::class.java)
+            startActivity(intent)
         }
 
         whiteRobotImg.setOnClickListener {
@@ -120,6 +128,8 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.d(TAG, "OnDestroy() called")
     }
+
+
 
     private fun toggleImage(){
         robotViewModel.advanceTurn()
